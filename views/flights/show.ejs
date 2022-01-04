@@ -17,24 +17,26 @@
 </div>
 
 <% if (tickets.length) { %>
-  <table>
-    <thead>
-      <tr>
-        <th>Seat</th>
-        <th>Price</th>
-        <th>Flight No.</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% tickets.forEach(function(t) { %>
-        <td><% t.seat %></td>
-        <td>$<% t.price %></td>
-        <td><% t.flight %></td>
-        <% )}; %>
-    </tbody>
-  </table>
-<% } %>
-
+<div><h3>Tickets Purchased</h3></div>
+<table>
+  <thead>
+    <tr>
+      <th>Seat</th>
+      <th>Price</th>
+      <th>Flight No.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% tickets.forEach(function(t) { %>
+    <td><% t.seat %></td>
+    <td>$<% t.price %></td>
+    <td><% t.flight %></td>
+  </tbody>
+</table>
+<% }); %> <% } %>
+<br />
+<a href="/tickets/new">New Ticket</a>
+<br />
 <% if (flight.destinations.length) { %>
 <table>
   <thead>
