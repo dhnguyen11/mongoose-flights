@@ -15,6 +15,26 @@
   <h3>Departure Date:</h3>
   <p><%= flight.departs %></p>
 </div>
+
+<% if (tickets.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Seat</th>
+        <th>Price</th>
+        <th>Flight No.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% tickets.forEach(function(t) { %>
+        <td><% t.seat %></td>
+        <td>$<% t.price %></td>
+        <td><% t.flight %></td>
+        <% )}; %>
+    </tbody>
+  </table>
+<% } %>
+
 <% if (flight.destinations.length) { %>
 <table>
   <thead>
@@ -24,12 +44,12 @@
     </tr>
   </thead>
   <tbody>
-      <% flight.destinations.forEach(function(d) { %>
-        <tr>
-            <td><%= d.airport %></td>
-            <td><%= d.arrival %></td>
-        </tr>
-      <% }); %>
+    <% flight.destinations.forEach(function(d) { %>
+    <tr>
+      <td><%= d.airport %></td>
+      <td><%= d.arrival %></td>
+    </tr>
+    <% }); %>
   </tbody>
 </table>
 <% } else { %>
