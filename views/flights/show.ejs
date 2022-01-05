@@ -28,9 +28,9 @@
   </thead>
   <tbody>
     <% tickets.forEach(function(t) { %>
-    <td><% t.seat %></td>
-    <td>$<% t.price %></td>
-    <td><% t.flight %></td>
+    <td><%= t.seat %></td>
+    <td>$<%= t.price %></td>
+    <td><%= t.flight %></td>
   </tbody>
 </table>
 <% }); %> <% } %>

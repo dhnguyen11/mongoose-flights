@@ -70,7 +70,7 @@ function newTicket(req, res) {
     Flight.findById(req.params.id, function (err, flightDocument) {
         res.render("tickets/new", {
             title: `New Ticket for ${flightDocument.flightNo}`,
-            flightDocument
+            flight: flightDocument
         })
     })
 }
